@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/stats.dart';
 
 class Question extends StatefulWidget{
   @override
@@ -46,7 +47,14 @@ class QuestionState extends State<Question>{
 
                     ),
                     trailing: IconButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        setState(() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Stats()),
+                          );
+                        });
+                      },
                       icon: Icon(Icons.stacked_bar_chart,color: Colors.white,size: 40,),
                     ),
                   ),
@@ -84,8 +92,8 @@ class QuestionState extends State<Question>{
                           child: Text(
                             "How many students in your class ____ from Korea?",
                             style: TextStyle(
-                              color: Colors.black54,
                               fontSize: 22,
+                              color: Colors.black54,
                               fontWeight: FontWeight.bold
                             ),
                             textAlign: TextAlign.center
@@ -149,7 +157,7 @@ class QuestionState extends State<Question>{
                 ),
               ),
               Positioned(
-                top: 500,
+                top: 480,
 
                 child: Padding(
                   padding: const EdgeInsets.only(left: 52,right: 52),
@@ -259,7 +267,7 @@ class QuestionState extends State<Question>{
                                   ),
                                 ),
                               ),
-                              SizedBox(width: width*0.50,),
+                              SizedBox(width: width*0.35,),
                               CircleAvatar(
                                 maxRadius: 10,
                                 minRadius: 10,
